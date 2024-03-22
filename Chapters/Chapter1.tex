@@ -26,7 +26,7 @@ En este capítulo se presentan los conceptos básicos de la diálisis renal. Ade
 
 \section{Conceptos básicos de la diálisis renal}
 
-En esta sección se abordan las definiciones de diálisis renal y sus principales tipos de tratamientos.
+En esta sección se abordan las definiciones de diálisis renal y sus principales tipos de tratamiento.
 
 \subsection{Diálisis renal y tipos de tratamiento}
 
@@ -35,7 +35,7 @@ La diálisis renal es un tratamiento en el que se extraen las toxinas y el exces
 Existen dos tipos principales de tratamientos de diálisis renal \citep{ARTICULO1}:
 
 \begin{itemize}
-\item Hemodiálisis (HD): En este tratamiento se utiliza una membrana artificial. La purificación de la sangre se lleva a cabo mediante un riñón artificial, que elimina el exceso de agua, residuos y toxinas antes de devolverla al cuerpo. Cada sesión de hemodiálisis puede durar aproximadamente cuatro horas y debe realizarse unas tres veces por semana.
+\item Hemodiálisis (HD): En este tratamiento se utiliza una membrana artificial. La purificación de la sangre se lleva a cabo mediante un riñón artificial, que elimina el exceso de agua, residuos y toxinas antes de devolverla al cuerpo. Cada sesión de hemodiálisis puede durar aproximadamente 4 horas y debe realizarse unas 3 veces por semana.
 \item Diálisis Peritoneal (DP): En este método de tratamiento, la filtración de la sangre se realiza en la cavidad peritoneal del paciente. Se utiliza un catéter permanente que se coloca en el abdomen, a través del cual se introduce una solución especial llamada líquido de diálisis en la cavidad peritoneal. Esta solución absorbe los desechos y el exceso de líquido del cuerpo a través de la membrana peritoneal, que actúa como una barrera semipermeable. Luego, después de un período de tiempo especificado (generalmente varias horas), el líquido de diálisis se drena del abdomen, llevando consigo los desechos y el exceso de líquido. Hay dos variantes de diálisis peritoneal: 
     \begin{itemize}
     \item Diálisis Peritoneal Continua Ambulatoria (DPCA): El paciente realiza los intercambios de líquido de diálisis manualmente varias veces al día, mientras sigue con sus actividades diarias. No se requiere una máquina para realizar los intercambios y el proceso es llevado a cabo por el paciente o su cuidador.
@@ -47,7 +47,7 @@ En la figura \ref{fig:diagDialisis} se muestra la diferencia entre ambos tratami
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.95\textwidth]{./Figures/Dialisis.pdf}
+\includegraphics[width=.98\textwidth]{./Figures/Dialisis.pdf}
 \caption{Diferencia entre hemodiálisis y diálisis peritoneal.}
 \label{fig:diagDialisis}
 \end{figure}
@@ -56,9 +56,9 @@ En la figura \ref{fig:diagDialisis} se muestra la diferencia entre ambos tratami
 \section{Contexto y motivación}
 
 La motivación principal de este trabajo es incorporar técnicas de inteligencia artificial (IA) en el campo de la medicina, dado que han demostrado una notable capacidad para anticipar eventos futuros basándose en datos históricos \citep{ARTICULO2}. 
-Pero uno de los desafíos recurrentes a la hora de entrenar modelos de IA es la obtención de datos representativos. En el ámbito de la medicina este desafío también se hace presente, ya que se suele contar con pocos datos médicos de una población muy reducida.
-Para el desarrollo de este trabajo se contó con datos médicos de unos catorce mi pacientes que estuvieron bajo tratamiento de diálisis renal. 
-Tanto el equipo de sistemas como el equipo médico de ésta empresa de diálisis renal, si bien no tienen experiencias en herramientas de IA para predicción de eventos, conocen el potencial de estos modelos para identificar patrones, por lo que colaboraron en el desarrollo de este trabajo para lograr el cumplimiento del objetivo.
+Sin embargo, uno de los desafíos recurrentes a la hora de entrenar modelos de IA es la obtención de datos representativos. En el ámbito de la medicina este desafío también se hace presente ya que se suele contar con pocos datos médicos de una población muy reducida.
+Para el desarrollo de este trabajo se contó con datos médicos de unos 14.000 pacientes que estuvieron bajo tratamiento de diálisis renal. 
+Tanto el equipo de sistemas como el equipo médico de esta empresa de diálisis renal, si bien no tienen experiencias en herramientas de IA para predicción de eventos, conocen el potencial de estos modelos para identificar patrones, por lo que colaboraron en el desarrollo de este trabajo para lograr el cumplimiento del objetivo.
 
 %----------------------------------------------------------------------------------------
 
@@ -66,7 +66,7 @@ Tanto el equipo de sistemas como el equipo médico de ésta empresa de diálisis
 
 \subsection{Objetivos}
 
-El propósito de este trabajo fue el desarrollo de un modelo de IA que permite predecir el riesgo de mortalidad en pacientes en diálisis renal, junto con la configuración de una plataforma de administración de modelos, una interfaz de comunicación con el modelo y un proceso que solicite las predicciones continuamente. Este conjunto de herramientas provee una predicción actualizada del riego de mortalidad de los pacientes, lo que permite al personal médico adaptar el tratamiento y la medicación prescrita para mejorarles su calidad de vida y, en última instancia, salvar vidas. En la figura \ref{fig:diagArqBasic} se muestra la arquitectura de la solución propuesta. 
+El propósito de este trabajo fue el desarrollo de un modelo de IA que permite predecir el riesgo de mortalidad en pacientes en diálisis renal, junto con la configuración de una plataforma de administración de modelos, una interfaz de comunicación con el modelo y un proceso que solicite las predicciones continuamente. Este conjunto de herramientas provee una predicción actualizada del riesgo de mortalidad de los pacientes, lo que permite al personal médico adaptar el tratamiento y la medicación prescrita para mejorarles su calidad de vida y, en última instancia, salvar vidas. En la figura \ref{fig:diagArqBasic} se muestra la arquitectura de la solución propuesta. 
 
 \begin{figure}[htpb]
 \centering 
@@ -78,10 +78,9 @@ El propósito de este trabajo fue el desarrollo de un modelo de IA que permite p
 
 \subsection{Alcance}
 
-Se encuentra dentro del alcance del trabajo la instalación y configuración de una plataforma de gestión de modelos que permite desplegar modelos en distintos ambientes, el desarrollo de un modelo de predicción de mortalidad, y la construcción de una interfaz y un proceso automático que actúan como nexo entre el modelo predictivo y el sistema de gestión de pacientes.
-Para el desarrollo del modelo, se elabora un conjunto de datos con variables médicas de pacientes en diálisis renal. El conjunto de datos debe estar en cumplimiento con la ley 25.326 para garantizar el derecho al honor y a la intimidad de los pacientes en cuestión. Asimismo, se incluye en el alcance el pre-procesamiento del conjunto de datos y el análisis de las distintas métricas para evaluar el correcto desempeño del modelo.
-
-Sin embargo, no se encuentra dentro del alcance del proyecto el desarrollo de una plataforma de gestión, sino que se eligió una existente que cumple con los requerimientos del trabajo, ni el desarrollo de una interfaz web orientada al usuario final. Tampoco se encuentra dentro del alcance la instalación del modelo predictivo en el entorno productivo de la empresa médica. Lo único que se instala en el entorno de la empresa médica será el proceso que recupera datos de los pacientes y llama al servicio web cada cierto período de tiempo para recuperar las predicciones. 
+Se encuentra dentro del alcance del trabajo el desarrollo de un modelo de predicción de mortalidad, la instalación y configuración de una plataforma que permita desplegarlo en distintos ambientes, y la construcción de una interfaz y un proceso automático que soliciten predicciones y devuelvan la información al usuario.
+Asimismo, se incluye en el alcance la obtención y el preprocesamiento del conjunto de datos, que deben estar en cumplimiento con la ley 25.326 para garantizar el derecho al honor y a la intimidad de los pacientes, como así también el análisis de las distintas métricas para evaluar el correcto desempeño del modelo.
+Sin embargo, no se encuentra dentro del alcance del proyecto el desarrollo de una plataforma de gestión (sino que se eligió una existente que cumple con los requerimientos del trabajo) ni el desarrollo de una interfaz web orientada al usuario final. Tampoco se encuentra dentro del alcance la instalación del modelo predictivo en el entorno productivo de la empresa médica. Lo único que se instala será el proceso que recupera datos de los pacientes y llama al servicio web cada cierto período de tiempo para recuperar las predicciones. 
 
 \subsection{Requerimientos}
 A continuación, se listan los requerimientos principales del trabajo agrupados por afinidad:
@@ -93,7 +92,7 @@ A continuación, se listan los requerimientos principales del trabajo agrupados 
 			\item El modelo predictivo deberá tener una precisión de al menos un 75\%.
 			\item El proceso que solicita predicciones y genera el reporte al usuario deberá poder ejecutarse automáticamente cada cierto período de tiempo.		
 			\item El reporte de predicciones que le llegue al usuario final deberá tener un formato claro y comprensible.
-			\item Se utilizará GIT como repositorio para el control de version de código
+			\item Se utilizará GIT como repositorio para el control de versión de código.
 		\end{enumerate}
 	\item Requerimientos de datos a utilizar
 		\begin{enumerate}		
@@ -101,7 +100,7 @@ A continuación, se listan los requerimientos principales del trabajo agrupados 
 		\end{enumerate}
 	\item Requerimientos de documentación
 		\begin{enumerate}
-			\item Redactar una memoria técnica con la información del proyecto.
+			\item Se redactará una memoria técnica con la información del proyecto.
 			\item La documentación de la interfaz por servicio web deberá incluir la lista de métodos disponibles con su detalle.
 			\item La documentación del modelo predictivo incluirá información sobre el origen de los datos utilizados para el entrenamiento, las características que se usaron, el detalle del modelo seleccionado y la información que haya sobre la explicabilidad del modelo.
 		\end{enumerate}		
@@ -111,11 +110,14 @@ A continuación, se listan los requerimientos principales del trabajo agrupados 
 
 \section{Estado del arte}
 
-Se llevó a cabo una exhaustiva revisión de la literatura relacionada con la predicción de la mortalidad de pacientes en diálisis renal y se ha encontrado principalmente una tesis doctoral \citep{ARTICULO3} muy relevante que plantea un objetivo similar pero cuenta con muchos menos datos para el entrenamiento de los modelos. Si bien las variables médicas seleccionadas para realizar las predicciones en dicha tesis son muy similares a las que se seleccionaron en este trabajo, allí se plantea la discriminación de los casos según el tiempo que los pacientes llevan en diálisis, ya sea tres meses, seis meses, un año o más. Los modelos utilizados en dicha tesis incluyen Bósque Aleatorio (\textit{Random Forest}) y Regresión Logística, algunos de los cuales también fueron utilizados en este trabajo.
-En cuanto a las conclusiones, para evaluar el desempeño de los modelos se utilizó la métrica de Área bajo la curva (AUC), la cual llega a valores entre 70\% y 73\%.
-En esta tesis también se muestra qué variables tienen mas influencia al realizar la predicción de mortalidad del paciente, lo que resulta sumamente importante para el personal médico.
-También se ha encontrado una investigación \citep{ARTICULO4} donde se utilizan técnicas de IA para predecir la mortalidad en pacientes con enfermedad renal crónica. La misma también cuenta con muy pocos datos de pacientes en diáfisis renal y, aunque no se da mucho detalle sobre el entrenamiento de los modelos, concluye indicando que con un modelo de red neuronal se obtiene una predicción superior al 90\%, mejor que con una Regresión Logística.
-Por otro lado, se ha encontrado otra tesis \citep{ARTICULO5} orientada comprobar si el índice neutrófilo/linfocito es un predictor de mortalidad en pacientes que inician hemodiálisis. Si bien no se entrena ningún modelo de IA en la investigación, se concluye en que dicho índice no es un predictor de la mortalidad pero que la edad mayor a 60 años si representa un factor de riesgo. 
+Se llevó a cabo una exhaustiva revisión de la literatura relacionada con la predicción de la mortalidad de pacientes en diálisis renal y se ha encontrado principalmente una tesis doctoral \citep{ARTICULO3} muy relevante que plantea un objetivo similar pero cuenta con muchos menos datos para el entrenamiento de los modelos. Si bien las variables médicas seleccionadas para realizar las predicciones en dicha tesis son muy similares a las que se seleccionaron en este trabajo, allí se plantea la discriminación de los casos según el tiempo que los pacientes llevan en diálisis, ya sea 3 meses, 6 meses, 1 año o más. Los modelos utilizados en dicha tesis incluyen \textit{Random Forest} y Regresión Logística, algunos de los cuales también fueron utilizados en este trabajo.
+En cuanto a las conclusiones, para evaluar el desempeño de los modelos se utilizó la métrica de Área bajo la curva (AUC), que llega a valores entre 70\% y 73\%.
+En esta tesis también se muestra qué variables tienen más influencia al realizar la predicción de mortalidad del paciente, lo que resulta sumamente importante para el personal médico.
+También se ha encontrado una investigación \citep{ARTICULO4} donde se utilizan técnicas de IA para predecir la mortalidad en pacientes con enfermedad renal crónica. Esta también cuenta con muy pocos datos de pacientes en diálisis renal y, aunque no se da mucho detalle sobre el entrenamiento de los modelos, concluye indicando que con un modelo de red neuronal se obtiene una predicción superior al 90\%, mejor que con una Regresión Logística.
+Por otro lado, se ha encontrado otra tesis \citep{ARTICULO5} orientada comprobar si el índice neutrófilo/linfocito es un predictor de mortalidad en pacientes que inician hemodiálisis. Si bien no se entrena ningún modelo de IA en la investigación, se concluye en que dicho índice no es un predictor de la mortalidad pero que la edad mayor a 60 años sí representa un factor de riesgo. 
 Existen muchos otros trabajos relacionados con la temática de la predicción de mortalidad en pacientes con enfermedades renales, donde algunos abordan el beneficio que aporta la IA en la detección y predicción de eventos en medicina \citep{ARTICULO6}\citep{ARTICULO7}\citep{ARTICULO9}, otros la predicción de mortalidad teniendo enfermedad renal junto con enfermedad coronaria \citep{ARTICULO10}, y otros la predicción de contraer algún cáncer renal \citep{ARTICULO8}.
 
-Si bien existe literatura académica que aborda el tema de la predicción de mortalidad de pacientes en diálisis renal, la mayoría de los trabajos se centran en investigaciones de carácter teórico y experimental, y además parten de conjuntos de datos muy chicos, lo cual no permite a los modelos generalizar el conocimiento para poder realizar predicciones correctas. Este trabajo se destaca por su enfoque práctico, ya que se desarrolla una herramienta concreta que pueda ser implementada en una empresa médica dedicada a la diálisis renal. Se espera obtener predicciones en tiempo real para los pacientes en diálisis renal y en base a su riesgo de mortalidad adecuar el tratamiento y la medicación prescrita. Esta iniciativa ofrece una solución práctica y viable en el ámbito clínico, lo que contribuye a mejorar la atención y seguimiento de los pacientes.
+Si bien existe literatura académica que aborda el tema de la predicción de mortalidad de pacientes en diálisis renal, la mayoría de los trabajos se centran en investigaciones de carácter teórico y experimental, y además parten de conjuntos de datos muy chicos, lo que no permite a los modelos generalizar el conocimiento para poder realizar predicciones correctas. 
+
+Este trabajo se destaca por su enfoque práctico, ya que se desarrolla una herramienta concreta que pueda ser implementada en una empresa médica dedicada a la diálisis renal. Se espera obtener predicciones en tiempo real para los pacientes en diálisis renal y en base a su riesgo de mortalidad adecuar el tratamiento y la medicación prescrita. Esta iniciativa ofrece una solución práctica y viable en el ámbito clínico, lo que contribuye a mejorar la atención y seguimiento de los pacientes.
+
